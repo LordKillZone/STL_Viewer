@@ -1,13 +1,19 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+from importlib.resources import path
 import numpy
 import mpl_toolkits
 from stl import mesh
 from mpl_toolkits import mplot3d
 from matplotlib import pyplot
+import sys
+sys.path.append(path)
 
-#your_mesh = mesh.Mesh.from_file('cube.stl')
+import subprocess
+subprocess.Popen('explorer "C:\temp"')
+
+
 
 figure = pyplot.figure()
 axes = mplot3d.Axes3D(figure)
