@@ -7,18 +7,18 @@ import mpl_toolkits
 from stl import mesh
 from mpl_toolkits import mplot3d
 from matplotlib import pyplot
-import sys
-sys.path.append(path)
+from tkinter import Tk     # from tkinter import Tk for Python 3.x
+from tkinter.filedialog import askopenfilename
 
-import subprocess
-subprocess.Popen('explorer "C:\temp"')
+Tk().withdraw() # we don't want a full GUI, so keep the root window from appearing
+filename = askopenfilename() # show an "Open" dialog box and return the path to the selected file
 
 
 
 figure = pyplot.figure()
 axes = mplot3d.Axes3D(figure)
 
-your_mesh = mesh.Mesh.from_file('C:/PY_files/numpy_stl/cube.stl')
+your_mesh = mesh.Mesh.from_file(filename)
 axes.add_collection3d(mplot3d.art3d.Poly3DCollection(your_mesh.vectors))
 
 scale = your_mesh.points.flatten()
