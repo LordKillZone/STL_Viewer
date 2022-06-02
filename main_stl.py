@@ -15,7 +15,7 @@ filename = askopenfilename()            #wybierniepliku .stl do wgrani do wyswie
 
 
 
-figure = pyplot.figure()
+figure = pyplot.figure()        #Tworzenie nowego plotu
 axes = mplot3d.Axes3D(figure)
 
 your_mesh = mesh.Mesh.from_file(filename)       #Otwarcie wybranego pliku .stl
