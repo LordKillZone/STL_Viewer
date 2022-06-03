@@ -8,7 +8,7 @@ import sys
 
 window = tk.Tk()
 window.title('TotalSTL')
-window.geometry('1000x800+50+50')
+window.geometry('300x200+75+75')
 window.iconbitmap('icon.ico')
 
 
@@ -18,7 +18,6 @@ def button_clicked():
     def exit():
         okno.destroy()
     okno.title('Information')
-    okno.geometry('800x100+5+5')
     ttk.Label(okno, text="TotalSTL").pack()
     ttk.Label(okno, text="version: 0.0.1").pack()
     ttk.Label(okno, text="Author: Piotr Pawlik").pack()
