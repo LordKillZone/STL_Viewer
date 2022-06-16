@@ -5,6 +5,7 @@ import tkinter.messagebox as mb
 import tkinter as tk
 import os
 import shutil
+from win32com.client import Dispatch
 
 
 def open_folder():
@@ -27,6 +28,12 @@ def LIST_F_1():
     for item in flist:
         lbox.insert(tk.END, item)
         
+        def opensystem(event):
+            x = lbox.curselection()[0]
+            os.startfile(lbox.get(x))
+            
+    lbox.bind("<Double-Button-1>", opensystem)
+        
 def LIST_F_2():
     flist2 = fd.askdirectory(title="Select Folder to open")
     flist2 = os.listdir(flist2)
@@ -38,3 +45,9 @@ def LIST_F_2():
     
     for item in flist2:
         lbox.insert(tk.END, item)
+        
+    def opensystem(event):
+        x = lbox.curselection()[0]
+        os.system(lbox.get(x))
+    
+    lbox.bind("<Double-Button-1>", opensystem)
