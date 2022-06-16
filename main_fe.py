@@ -24,16 +24,15 @@ def relative_to_assets(path: str) -> Path:
 
 window = Tk()
 window.title('TotalSTL')
-#window.iconbitmap('icon.ico')
 
-window.geometry("900x800")
+window.geometry("900x480")
 window.configure(bg = "#FFFFFF")
 
 
 canvas = Canvas(
     window,
     bg = "#FFFFFF",
-    height = 800,
+    height = 480,
     width = 900,
     bd = 0,
     highlightthickness = 0,
@@ -42,10 +41,10 @@ canvas = Canvas(
 
 canvas.place(x = 0, y = 0)
 canvas.create_rectangle(
-    427.0,
-    41.0,
-    472.0,
-    801.0,
+    0.0,
+    40.0,
+    45.0,
+    480.0,
     fill="#D9D9D9",
     outline="")
 
@@ -57,15 +56,6 @@ canvas.create_rectangle(
     fill="#D9D9D9",
     outline="")
 
-canvas.create_text(
-    384.0,
-    9.0,
-    anchor="nw",
-    text="Total_STL\n",
-    fill="#000000",
-    font=("Inter", 24 * -1)
-)
-
 def button_1():
     okno =Tk()
     def exit():
@@ -74,7 +64,7 @@ def button_1():
     ttk.Label(okno, text="TotalSTL").pack()
     ttk.Label(okno, text="version: 0.0.2").pack()
     ttk.Label(okno, text="Author: Piotr Pawlik").pack()
-    ttk.Label(okno, text="Jest to oprogramowanie pozwalajace na wyswietlanie plikow .STL, zarządzanie nimi i przeglądanie plikow .GCODE dla drukarek 3D").pack()
+    ttk.Label(okno, text="Jest to oprogramowanie pozwalajace na wyswietlanie plikow .STL, zarządzanie nimi i przeglądanie/edytowanie plikow .GCODE dla drukarek 3D").pack()
     ttk.Button(okno, text="EXIT", command=exit).pack()
 
 button_image_1 = PhotoImage(
@@ -151,8 +141,8 @@ button_5 = Button(
     relief="flat"
 )
 button_5.place(
-    x=432.0,
-    y=65.0,
+    x=4.0,
+    y=60.0,
     width=35.0,
     height=52.0
 )
@@ -167,8 +157,8 @@ button_6 = Button(
     relief="flat"
 )
 button_6.place(
-    x=432.0,
-    y=148.0,
+    x=4.0,
+    y=131.0,
     width=35.0,
     height=52.0
 )
@@ -183,8 +173,8 @@ button_7 = Button(
     relief="flat"
 )
 button_7.place(
-    x=432.0,
-    y=224.0,
+    x=4.0,
+    y=202.0,
     width=35.0,
     height=52.0
 )
@@ -199,8 +189,8 @@ button_8 = Button(
     relief="flat"
 )
 button_8.place(
-    x=432.0,
-    y=300.0,
+    x=4.0,
+    y=273.0,
     width=35.0,
     height=52.0
 )
@@ -215,26 +205,178 @@ button_9 = Button(
     relief="flat"
 )
 button_9.place(
-    x=432.0,
-    y=376.0,
+    x=5.0,
+    y=344.0,
     width=35.0,
     height=52.0
 )
 
+button_image_10 = PhotoImage(
+    file=relative_to_assets("button_10.png"))
+button_10 = Button(
+    image=button_image_10,
+    borderwidth=0,
+    highlightthickness=0,
+    command=lambda: print("button_10 clicked"),
+    relief="flat"
+)
+button_10.place(
+    x=0.0,
+    y=415.0,
+    width=45.0,
+    height=57.0
+)
+
 canvas.create_rectangle(
-    0.0,
-    51.0,
-    416.0,
-    800.0,
+    855.0,
+    41.0,
+    900.0,
+    480.0,
+    fill="#D9D9D9",
+    outline="")
+
+button_image_11 = PhotoImage(
+    file=relative_to_assets("button_11.png"))
+button_11 = Button(
+    image=button_image_11,
+    borderwidth=0,
+    highlightthickness=0,
+    command=lambda: print("button_11 clicked"),
+    relief="flat"
+)
+button_11.place(
+    x=859.0,
+    y=61.0,
+    width=35.0,
+    height=52.0
+)
+
+button_image_12 = PhotoImage(
+    file=relative_to_assets("button_12.png"))
+button_12 = Button(
+    image=button_image_12,
+    borderwidth=0,
+    highlightthickness=0,
+    command=lambda: print("button_12 clicked"),
+    relief="flat"
+)
+button_12.place(
+    x=859.0,
+    y=132.0,
+    width=35.0,
+    height=52.0
+)
+
+button_image_13 = PhotoImage(
+    file=relative_to_assets("button_13.png"))
+button_13 = Button(
+    image=button_image_13,
+    borderwidth=0,
+    highlightthickness=0,
+    command=lambda: print("button_13 clicked"),
+    relief="flat"
+)
+button_13.place(
+    x=859.0,
+    y=203.0,
+    width=35.0,
+    height=52.0
+)
+
+button_image_14 = PhotoImage(
+    file=relative_to_assets("button_14.png"))
+button_14 = Button(
+    image=button_image_14,
+    borderwidth=0,
+    highlightthickness=0,
+    command=lambda: print("button_14 clicked"),
+    relief="flat"
+)
+button_14.place(
+    x=859.0,
+    y=274.0,
+    width=35.0,
+    height=52.0
+)
+
+button_image_15 = PhotoImage(
+    file=relative_to_assets("button_15.png"))
+button_15 = Button(
+    image=button_image_15,
+    borderwidth=0,
+    highlightthickness=0,
+    command=lambda: print("button_15 clicked"),
+    relief="flat"
+)
+button_15.place(
+    x=860.0,
+    y=345.0,
+    width=35.0,
+    height=52.0
+)
+
+button_image_16 = PhotoImage(
+    file=relative_to_assets("button_16.png"))
+button_16 = Button(
+    image=button_image_16,
+    borderwidth=0,
+    highlightthickness=0,
+    command=lambda: print("button_16 clicked"),
+    relief="flat"
+)
+button_16.place(
+    x=855.0,
+    y=416.0,
+    width=45.0,
+    height=57.0
+)
+
+canvas.create_rectangle(
+    45.0,
+    41.0,
+    435.0,
+    480.0,
     fill="#AFADAD",
     outline="")
 
 canvas.create_rectangle(
-    484.0,
-    52.0,
-    900.0,
-    801.0,
+    465.0,
+    41.0,
+    855.0,
+    480.0,
     fill="#AFADAD",
     outline="")
+
+canvas.create_rectangle(
+    435.0,
+    41.0,
+    465.0,
+    480.0,
+    fill="#A40A0A",
+    outline="")
+
+canvas.create_rectangle(
+    53.0,
+    50.0,
+    427.0,
+    472.0,
+    fill="#A9E6AF",
+    outline="")
+
+canvas.create_rectangle(
+    473.0,
+    50.0,
+    847.0,
+    472.0,
+    fill="#A9E7AF",
+    outline="")
+
+image_image_1 = PhotoImage(
+    file=relative_to_assets("image_1.png"))
+image_1 = canvas.create_image(
+    450.0,
+    20.0,
+    image=image_image_1
+)
 window.resizable(False, False)
 window.mainloop()
