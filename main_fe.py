@@ -7,7 +7,9 @@ import sys
 import os
 import main_stl
 import main_gcode
+import main_FM
 from pathlib import Path
+from tkinter.filedialog import askopenfilename
 
 # from tkinter import *
 # Explicit imports to satisfy Flake8
@@ -24,6 +26,7 @@ def relative_to_assets(path: str) -> Path:
 
 window = Tk()
 window.title('TotalSTL')
+
 
 window.geometry("900x480")
 window.configure(bg = "#FFFFFF")
@@ -77,8 +80,8 @@ button_1 = Button(
     relief="flat"
 )
 button_1.place(
-    x=744.0,
-    y=7.0,
+    x=665.0,
+    y=6.0,
     width=80.0,
     height=25.0
 )
@@ -109,7 +112,7 @@ button_3 = Button(
     relief="flat"
 )
 button_3.place(
-    x=79.0,
+    x=199.0,
     y=8.0,
     width=81.0,
     height=25.0
@@ -125,8 +128,8 @@ button_4 = Button(
     relief="flat"
 )
 button_4.place(
-    x=827.0,
-    y=7.0,
+    x=839.0,
+    y=6.0,
     width=53.0,
     height=25.0
 )
@@ -201,7 +204,7 @@ button_9 = Button(
     image=button_image_9,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: print("button_9 clicked"),
+    command=main_FM.delete_file,
     relief="flat"
 )
 button_9.place(
@@ -217,7 +220,7 @@ button_10 = Button(
     image=button_image_10,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: print("button_10 clicked"),
+    command=main_FM.open_folder,
     relief="flat"
 )
 button_10.place(
@@ -228,9 +231,9 @@ button_10.place(
 )
 
 canvas.create_rectangle(
-    855.0,
+    465.0,
     41.0,
-    900.0,
+    510.0,
     480.0,
     fill="#D9D9D9",
     outline="")
@@ -245,7 +248,7 @@ button_11 = Button(
     relief="flat"
 )
 button_11.place(
-    x=859.0,
+    x=469.0,
     y=61.0,
     width=35.0,
     height=52.0
@@ -261,7 +264,7 @@ button_12 = Button(
     relief="flat"
 )
 button_12.place(
-    x=859.0,
+    x=469.0,
     y=132.0,
     width=35.0,
     height=52.0
@@ -277,7 +280,7 @@ button_13 = Button(
     relief="flat"
 )
 button_13.place(
-    x=859.0,
+    x=469.0,
     y=203.0,
     width=35.0,
     height=52.0
@@ -293,7 +296,7 @@ button_14 = Button(
     relief="flat"
 )
 button_14.place(
-    x=859.0,
+    x=469.0,
     y=274.0,
     width=35.0,
     height=52.0
@@ -309,11 +312,15 @@ button_15 = Button(
     relief="flat"
 )
 button_15.place(
-    x=860.0,
+    x=470.0,
     y=345.0,
     width=35.0,
     height=52.0
 )
+
+def Choose_2():
+    Tk().withdraw() 
+    Load_2 = askopenfilename() 
 
 button_image_16 = PhotoImage(
     file=relative_to_assets("button_16.png"))
@@ -321,17 +328,17 @@ button_16 = Button(
     image=button_image_16,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: print("button_16 clicked"),
+    command=Choose_2,
     relief="flat"
 )
 button_16.place(
-    x=855.0,
+    x=465.0,
     y=416.0,
     width=45.0,
     height=57.0
 )
 
-canvas.create_rectangle(
+canvas.create_rectangle(    #szary_lewy
     45.0,
     41.0,
     435.0,
@@ -339,15 +346,15 @@ canvas.create_rectangle(
     fill="#AFADAD",
     outline="")
 
-canvas.create_rectangle(
-    465.0,
+canvas.create_rectangle(    #szary_prawy
+    510.0,
     41.0,
-    855.0,
+    900.0,
     480.0,
     fill="#AFADAD",
     outline="")
 
-canvas.create_rectangle(
+canvas.create_rectangle(    #czerwony_srodek
     435.0,
     41.0,
     465.0,
@@ -355,21 +362,23 @@ canvas.create_rectangle(
     fill="#A40A0A",
     outline="")
 
-canvas.create_rectangle(
+canvas.create_rectangle(    #zielony_lewy
     53.0,
     50.0,
     427.0,
     472.0,
     fill="#A9E6AF",
-    outline="")
+    outline="#000000")
 
-canvas.create_rectangle(
-    473.0,
+
+
+canvas.create_rectangle(    #zielony_prawy
+    518.0,
     50.0,
-    847.0,
+    892.0,
     472.0,
     fill="#A9E7AF",
-    outline="")
+    outline="#000000")
 
 image_image_1 = PhotoImage(
     file=relative_to_assets("image_1.png"))
@@ -378,5 +387,53 @@ image_1 = canvas.create_image(
     20.0,
     image=image_image_1
 )
+
+button_image_17 = PhotoImage(
+    file=relative_to_assets("button_17.png"))
+button_17 = Button(
+    image=button_image_17,
+    borderwidth=0,
+    highlightthickness=0,
+    command=main_FM.LIST_F_1,
+    relief="flat"
+)
+button_17.place(
+    x=59.0,
+    y=55.0,
+    width=70.0,
+    height=20.652175903320312
+)
+
+button_image_18 = PhotoImage(
+    file=relative_to_assets("button_18.png"))
+button_18 = Button(
+    image=button_image_18,
+    borderwidth=0,
+    highlightthickness=0,
+    command=main_FM.LIST_F_2,
+    relief="flat"
+)
+button_18.place(
+    x=523.0,
+    y=55.0,
+    width=70.0,
+    height=20.652175903320312
+)
+
+canvas.create_rectangle(
+    54.0,
+    79.0,
+    427.0,
+    80.0,
+    fill="#000000",
+    outline="")
+
+canvas.create_rectangle(
+    518.0,
+    79.0,
+    891.0,
+    80.0,
+    fill="#000000",
+    outline="")
 window.resizable(False, False)
 window.mainloop()
