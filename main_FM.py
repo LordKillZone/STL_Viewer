@@ -7,7 +7,7 @@ import tkinter.messagebox as mb
 import tkinter as tk
 import os
 import shutil
-from win32com.client import Dispatch
+#from win32com.client import Dispatch
 from tkinter.filedialog import askopenfilename
 
 

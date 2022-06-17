@@ -62,9 +62,9 @@ def from_rgb(rgb):
 def quit(self):
     window.destroy()
     
-def delete():
-    os.remove(mypath/selection)
-    mb.showinfo(title='Ukonczono', message='Plik usuniety!')
+#def delete():
+    #os.remove(mypath/selection)
+    #mb.showinfo(title='Ukonczono', message='Plik usuniety!')
 
 # EVENTS --------------------------------------------------
 
