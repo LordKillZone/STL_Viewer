@@ -204,7 +204,7 @@ button_9 = Button(
     image=button_image_9,
     borderwidth=0,
     highlightthickness=0,
-    command=main_FM.delete_file,
+    command=print('dziala'),
     relief="flat"
 )
 button_9.place(
