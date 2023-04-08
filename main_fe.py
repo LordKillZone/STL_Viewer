@@ -15,6 +15,7 @@ from tkinter.filedialog import askopenfilename
 # Explicit imports to satisfy Flake8
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage, ttk
 
+import main_stl_faster
 
 OUTPUT_PATH = Path(__file__).parent
 ASSETS_PATH = OUTPUT_PATH / Path("./assets")
@@ -92,7 +93,7 @@ button_2 = Button(
     image=button_image_2,
     borderwidth=0,
     highlightthickness=0,
-    command=main_stl.STL_view,
+    command=main_stl_faster.STL_view,
     relief="flat"
 )
 button_2.place(
