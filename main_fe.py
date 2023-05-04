@@ -16,6 +16,7 @@ from tkinter.filedialog import askopenfilename
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage, ttk
 
 import main_stl_faster
+from values import Values
 
 OUTPUT_PATH = Path(__file__).parent
 ASSETS_PATH = OUTPUT_PATH / Path("./assets")
@@ -77,7 +78,7 @@ button_1 = Button(
     image=button_image_1,
     borderwidth=0,
     highlightthickness=0,
-    command=button_1,
+    command=lambda: button_1,
     relief="flat"
 )
 button_1.place(
@@ -93,7 +94,7 @@ button_2 = Button(
     image=button_image_2,
     borderwidth=0,
     highlightthickness=0,
-    command=main_stl_faster.STL_view,
+    command=lambda: main_stl_faster.STL_view,
     relief="flat"
 )
 button_2.place(
@@ -109,7 +110,7 @@ button_3 = Button(
     image=button_image_3,
     borderwidth=0,
     highlightthickness=0,
-    command=main_gcode.GCODE,
+    command=lambda: main_gcode.GCODE,
     relief="flat"
 )
 button_3.place(
@@ -125,7 +126,7 @@ button_4 = Button(
     image=button_image_4,
     borderwidth=0,
     highlightthickness=0,
-    command=sys.exit,
+    command=sys.exit, #wyjscie z programu
     relief="flat"
 )
 button_4.place(
@@ -205,7 +206,7 @@ button_9 = Button(
     image=button_image_9,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: print("dziala"),
+    command=lambda: os.remove(Values.p_left),
     relief="flat"
 )
 button_9.place(
@@ -221,7 +222,7 @@ button_10 = Button(
     image=button_image_10,
     borderwidth=0,
     highlightthickness=0,
-    command=main_FM.open_folder,
+    command=lambda: main_FM.LIST_F_1(),
     relief="flat"
 )
 button_10.place(
@@ -245,7 +246,7 @@ button_11 = Button(
     image=button_image_11,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: print("button_11 clicked"),
+    command=lambda:  main_FM.COPY_RtoL(),
     relief="flat"
 )
 button_11.place(
@@ -309,7 +310,7 @@ button_15 = Button(
     image=button_image_15,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: print("button_15 clicked"),
+    command=lambda: os.remove(Values.p_right),
     relief="flat"
 )
 button_15.place(
@@ -319,17 +320,13 @@ button_15.place(
     height=52.0
 )
 
-def Choose_2():
-    Tk().withdraw() 
-    Load_2 = askopenfilename() 
-
 button_image_16 = PhotoImage(
     file=relative_to_assets("button_16.png"))
 button_16 = Button(
     image=button_image_16,
     borderwidth=0,
     highlightthickness=0,
-    command=Choose_2,
+    command=main_FM.LIST_F_2,
     relief="flat"
 )
 button_16.place(
