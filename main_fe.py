@@ -68,7 +68,7 @@ def button_1():
     ttk.Label(okno, text="TotalSTL").pack()
     ttk.Label(okno, text="version: 0.0.2").pack()
     ttk.Label(okno, text="Author: Piotr Pawlik").pack()
-    ttk.Label(okno, text="Jest to oprogramowanie pozwalajace na wyswietlanie plikow .STL, zarządzanie nimi i przeglądanie/edytowanie plikow .GCODE dla drukarek 3D").pack()
+    ttk.Label(okno, text="Jest to oprogramowanie pozwalajace na wyswietlanie plikow .STL, zarządzanie nimi i przeglądanie plikow .GCODE dla drukarek 3D").pack()
     ttk.Button(okno, text="EXIT", command=exit).pack()
 
 button_image_1 = PhotoImage(
@@ -141,7 +141,7 @@ button_5 = Button(
     image=button_image_5,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: print("button_5 clicked"),
+    command=lambda: main_FM.COPY_LtoR(),
     relief="flat"
 )
 button_5.place(
@@ -205,7 +205,7 @@ button_9 = Button(
     image=button_image_9,
     borderwidth=0,
     highlightthickness=0,
-    command=print('dziala'),
+    command=lambda: print("dziala"),
     relief="flat"
 )
 button_9.place(

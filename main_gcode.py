@@ -1,34 +1,45 @@
-import tkinter as tk
-from tkinter import filedialog
-import matplotlib.pyplot as plt
-
-
 def GCODE():
+    command = print('dziala')
 
-    # Wyświetlenie okna dialogowego i wybór pliku GCode
-    root = tk.Tk()
-    root.withdraw()
-    file_path = filedialog.askopenfilename()
-
-    # Wczytanie pliku GCode
-    with open(file_path, 'r') as f:
-        lines = f.readlines()
-
-    # Przetworzenie linii GCode i wyodrębnienie informacji o współrzędnych
-    x = []
-    y = []
-    for line in lines:
-        if line.startswith('G1'):
-            tokens = line.split(' ')
-            for token in tokens:
-                if token.startswith('X'):
-                    x.append(float(token[1:]))
-                elif token.startswith('Y'):
-                    y.append(float(token[1:]))
-
-    # Wygenerowanie wykresu
-    fig, ax = plt.subplots()
-    ax.plot(x, y)
-    ax.set_aspect('equal')
-    ax.invert_yaxis()
-    plt.show()
+# import gcodeparser
+# import numpy as np
+# import pythreejs as three
+#
+# # Wczytaj plik G-code
+# with open('test.gcode', 'r') as f:
+#     gcode_data = f.read()
+#
+# # Przetwórz plik G-code i wyodrębnij współrzędne punktów
+# parser = gcodeparser.GcodeParser(gcode_data)
+# x, y, z = [], [], []
+# for cmd in parser.get_commands():
+#     if cmd['cmd'] == 'G1':
+#         x.append(cmd['params']['X'])
+#         y.append(cmd['params']['Y'])
+#         z.append(cmd['params']['Z'])
+#
+# # Utwórz geometrię z punktów
+# points_geometry = three.BufferGeometry(
+#     attributes={
+#         'position': three.BufferAttribute(np.array([x, y, z]).T, normalized=False),
+#     }
+# )
+#
+# # Utwórz materiał punktów
+# points_material = three.PointsMaterial(
+#     color='blue',
+#     size=0.05,
+# )
+#
+# # Utwórz punkty
+# points = three.Points(
+#     geometry=points_geometry,
+#     material=points_material,
+# )
+#
+# # Wyświetl punkty
+# renderer = three.Renderer()
+# camera = three.PerspectiveCamera(position=[0, 0, 10], aspect=1)
+# scene = three.Scene(children=[points])
+# controller = three.OrbitControls(controlling=camera)
+# display(three.Renderer(camera=camera, scene=scene, controls=[controller]))
