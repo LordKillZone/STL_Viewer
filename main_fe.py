@@ -78,7 +78,7 @@ button_1 = Button(
     image=button_image_1,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: button_1,
+    command=button_1,
     relief="flat"
 )
 button_1.place(
@@ -94,7 +94,7 @@ button_2 = Button(
     image=button_image_2,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: main_stl_faster.STL_view,
+    command=main_stl_faster.STL_view,
     relief="flat"
 )
 button_2.place(
@@ -158,7 +158,7 @@ button_6 = Button(
     image=button_image_6,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: print("button_6 clicked"),
+    command=lambda: main_FM.MOVE_LtoR(),
     relief="flat"
 )
 button_6.place(
@@ -168,37 +168,37 @@ button_6.place(
     height=52.0
 )
 
-button_image_7 = PhotoImage(
-    file=relative_to_assets("button_7.png"))
-button_7 = Button(
-    image=button_image_7,
-    borderwidth=0,
-    highlightthickness=0,
-    command=lambda: print("button_7 clicked"),
-    relief="flat"
-)
-button_7.place(
-    x=4.0,
-    y=202.0,
-    width=35.0,
-    height=52.0
-)
+# button_image_7 = PhotoImage(
+#     file=relative_to_assets("button_7.png"))
+# button_7 = Button(
+#     image=button_image_7,
+#     borderwidth=0,
+#     highlightthickness=0,
+#     command=lambda: print("button_7 clicked"),
+#     relief="flat"
+# )
+# button_7.place(
+#     x=4.0,
+#     y=202.0,
+#     width=35.0,
+#     height=52.0
+# )
 
-button_image_8 = PhotoImage(
-    file=relative_to_assets("button_8.png"))
-button_8 = Button(
-    image=button_image_8,
-    borderwidth=0,
-    highlightthickness=0,
-    command=lambda: print("button_8 clicked"),
-    relief="flat"
-)
-button_8.place(
-    x=4.0,
-    y=273.0,
-    width=35.0,
-    height=52.0
-)
+# button_image_8 = PhotoImage(
+#     file=relative_to_assets("button_8.png"))
+# button_8 = Button(
+#     image=button_image_8,
+#     borderwidth=0,
+#     highlightthickness=0,
+#     command=lambda: print("button_8 clicked"),
+#     relief="flat"
+# )
+# button_8.place(
+#     x=4.0,
+#     y=273.0,
+#     width=35.0,
+#     height=52.0
+# )
 
 button_image_9 = PhotoImage(
     file=relative_to_assets("button_9.png"))
@@ -206,7 +206,7 @@ button_9 = Button(
     image=button_image_9,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: os.remove(Values.p_left),
+    command=lambda: main_FM.remove_left(),
     relief="flat"
 )
 button_9.place(
@@ -222,7 +222,7 @@ button_10 = Button(
     image=button_image_10,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: main_FM.LIST_F_1(),
+    command=lambda: main_FM.open_folder1(),
     relief="flat"
 )
 button_10.place(
@@ -262,7 +262,7 @@ button_12 = Button(
     image=button_image_12,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: print("button_12 clicked"),
+    command=lambda: main_FM.MOVE_RtoL(),
     relief="flat"
 )
 button_12.place(
@@ -272,37 +272,37 @@ button_12.place(
     height=52.0
 )
 
-button_image_13 = PhotoImage(
-    file=relative_to_assets("button_13.png"))
-button_13 = Button(
-    image=button_image_13,
-    borderwidth=0,
-    highlightthickness=0,
-    command=lambda: print("button_13 clicked"),
-    relief="flat"
-)
-button_13.place(
-    x=469.0,
-    y=203.0,
-    width=35.0,
-    height=52.0
-)
+# button_image_13 = PhotoImage(
+#     file=relative_to_assets("button_13.png"))
+# button_13 = Button(
+#     image=button_image_13,
+#     borderwidth=0,
+#     highlightthickness=0,
+#     command=lambda: print("button_13 clicked"),
+#     relief="flat"
+# )
+# button_13.place(
+#     x=469.0,
+#     y=203.0,
+#     width=35.0,
+#     height=52.0
+# )
 
-button_image_14 = PhotoImage(
-    file=relative_to_assets("button_14.png"))
-button_14 = Button(
-    image=button_image_14,
-    borderwidth=0,
-    highlightthickness=0,
-    command=lambda: print("button_14 clicked"),
-    relief="flat"
-)
-button_14.place(
-    x=469.0,
-    y=274.0,
-    width=35.0,
-    height=52.0
-)
+# button_image_14 = PhotoImage(
+#     file=relative_to_assets("button_14.png"))
+# button_14 = Button(
+#     image=button_image_14,
+#     borderwidth=0,
+#     highlightthickness=0,
+#     command=lambda: print("button_14 clicked"),
+#     relief="flat"
+# )
+# button_14.place(
+#     x=469.0,
+#     y=274.0,
+#     width=35.0,
+#     height=52.0
+# )
 
 button_image_15 = PhotoImage(
     file=relative_to_assets("button_15.png"))
@@ -310,7 +310,7 @@ button_15 = Button(
     image=button_image_15,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: os.remove(Values.p_right),
+    command=lambda: main_FM.remove_right(),
     relief="flat"
 )
 button_15.place(
@@ -326,7 +326,7 @@ button_16 = Button(
     image=button_image_16,
     borderwidth=0,
     highlightthickness=0,
-    command=main_FM.LIST_F_2,
+    command=lambda: main_FM.open_folder2(),
     relief="flat"
 )
 button_16.place(
