@@ -1,6 +1,21 @@
-def GCODE():
-    command = print('dziala')
+import os
 
+import texteditor
+import tkinter.filedialog as fd
+from tkinter.filedialog import askopenfilename
+
+
+
+def GCODE():
+    file = fd.askopenfilename(title="Wybierz folder do otwarcia")
+    command = print('dziala')
+    # f = open("file.gcode", "r")
+    # print(f.read())
+    # f.close()
+    os.startfile(file)
+
+def gCODE2(file2):
+    os.startfile(file2)
 # import gcodeparser
 # import numpy as np
 # import pythreejs as three

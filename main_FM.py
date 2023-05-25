@@ -9,6 +9,7 @@ import tkinter as tk
 import os
 from tkinter import messagebox
 
+import main_gcode
 from values import Values
 import glob
 import shutil
@@ -35,6 +36,8 @@ def LIST_F_1():
         messagebox.showerror("Error", "Proszę wybrać folder do otwarcia")
     else:
         flist = glob.glob(os.path.join(Values.folder, '*.stl'))
+        flist += glob.glob(os.path.join(Values.folder, '*.gcode'))
+        flist += glob.glob(os.path.join(Values.folder, '*.obj'))
 
         lbox = tk.Listbox(bg="#A9E7AF")
         lbox.pack()
@@ -52,9 +55,14 @@ def LIST_F_1():
                 filename = os.path.join(Values.folder, flist[index])
                 Values.path = filename
                 Values.p_left = filename
+                Values.name = os.path.basename(filename)
                 print("Wybrano plik lewa:", Values.path)
                 print("folder = " + Values.p_right)
-                main_stl_faster.STL_view()
+                _, file_extension = os.path.splitext(filename)
+                if file_extension == '.stl' or '.obj':
+                    main_stl_faster.STL_view()
+                if file_extension =='.gcode':
+                    main_gcode.gCODE2(filename)
 
     def opensystem_click(event):
         selection = lbox.curselection()
@@ -69,6 +77,7 @@ def LIST_F_1():
     lbox.bind("<ButtonRelease-1>", opensystem_click)
 
 
+
 def LIST_F_2():
     if len(Values.folder2) == 0:
         messagebox.showerror("Error", "Proszę wybrać folder do otwarcia")
@@ -76,6 +85,8 @@ def LIST_F_2():
     # flist2 = os.listdir(flist2)
     else:
         flist2 = glob.glob(os.path.join(Values.folder2, '*.stl'))
+        flist2 += glob.glob(os.path.join(Values.folder2, '*.gcode'))
+        flist2 += glob.glob(os.path.join(Values.folder2, '*.obj'))
         Values.p_left = Values.folder2
 
         lbox = tk.Listbox(bg="#A9E7AF")
@@ -83,6 +94,7 @@ def LIST_F_2():
         lbox.place(x=535, y=90, height=361, width=340)
 
         for item in flist2:
+            Values.name = os.path.basename(item)
             filename = os.path.basename(item)
             lbox.insert(tk.END, filename)
 
@@ -95,7 +107,12 @@ def LIST_F_2():
                 Values.p_right = filename
                 print("Wybrano plik prawy:", Values.path)
                 print("folder prawy: " + Values.folder2)
-                main_stl_faster.STL_view()
+                Values.name = os.path.basename(filename)
+                _, file_extension = os.path.splitext(filename)
+                if file_extension == '.stl' or '.obj':
+                    main_stl_faster.STL_view()
+                if file_extension == '.gcode':
+                    main_gcode.gCODE2(filename)
 
         def opensystem_click(event):
             selection = lbox.curselection()
@@ -104,6 +121,7 @@ def LIST_F_2():
                 filename = os.path.join(Values.folder2, flist2[index])
                 Values.p_right = filename
                 print("Wybrano plik prawy:", Values.p_right)
+
 
         lbox.bind("<Double-Button-1>", opensystem)
         lbox.bind("<ButtonRelease-1>", opensystem_click)

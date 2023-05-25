@@ -4,3 +4,4 @@ class Values:
    p_right=""
    folder=""
    folder2=""
+   name=""

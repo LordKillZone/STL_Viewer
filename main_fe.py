@@ -110,7 +110,7 @@ button_3 = Button(
     image=button_image_3,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: main_gcode.GCODE,
+    command=main_gcode.GCODE,
     relief="flat"
 )
 button_3.place(
