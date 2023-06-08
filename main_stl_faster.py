@@ -24,6 +24,8 @@ def STL_view():
             # Set the background color and show the plot
             plotter.set_background("white")
             plotter.show()
+
+
             plotter.close()
             plotter.deep_clean()
 
@@ -45,6 +47,6 @@ def STL_view():
             plotter.deep_clean()
 
     except Exception as e:
-        error_message = "Wystąpił błąd. Czy na pewno wybrałeś poprawny plik? " + str(e)
-        messagebox.showerror("Error", error_message)
+        error_message = "Wystąpił błąd. " + str(e)
+        messagebox.showerror("Błąd", error_message)
 
